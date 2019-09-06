@@ -1,25 +1,25 @@
- #define CHAR /* ×Ö·ûÐÍ */
- #include<stdio.h> /* EOF(=^Z»òF6),NULL */
+ #define CHAR /* ï¿½Ö·ï¿½ï¿½ï¿½ */
+ #include<stdio.h> /* EOF(=^Zï¿½ï¿½F6),NULL */
  #include<math.h> /* floor(),ceil(),abs() */
  #define TRUE 1
  #define FALSE 0
  #define OK 1
- typedef int Status; /* StatusÊÇº¯ÊýµÄÀàÐÍ,ÆäÖµÊÇº¯Êý½á¹û×´Ì¬´úÂë£¬ÈçOKµÈ */
+ typedef int Status; /* Statusï¿½Çºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Öµï¿½Çºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½OKï¿½ï¿½ */
  #ifdef CHAR
    typedef char TElemType;
-   TElemType Nil=' '; /* ×Ö·ûÐÍÒÔ¿Õ¸ñ·ûÎª¿Õ */
+   TElemType Nil=' '; /* ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ô¿Õ¸ï¿½ï¿½Îªï¿½ï¿½ */
  #endif
  #ifdef INT
    typedef int TElemType;
-   TElemType Nil=0; /* ÕûÐÍÒÔ0Îª¿Õ */
+   TElemType Nil=0; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0Îªï¿½ï¿½ */
  #endif
  typedef struct BiTNode
  {
    TElemType data;
-   struct BiTNode *lchild,*rchild; /* ×óÓÒº¢×ÓÖ¸Õë */
+   struct BiTNode *lchild,*rchild; /* ï¿½ï¿½ï¿½Òºï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ */
  }BiTNode,*BiTree;
  Status InitBiTree(BiTree *T)
- { /* ²Ù×÷½á¹û: ¹¹Ôì¿Õ¶þ²æÊ÷T */
+ { /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½ï¿½ï¿½T */
    *T=NULL;
    return OK;
  }
@@ -32,22 +32,22 @@
  #ifdef INT
    scanf("%d",&ch);
  #endif
-   if(ch==Nil) /* ¿Õ */
+   if(ch==Nil) /* ï¿½ï¿½ */
      *T=NULL;
    else
    {
      *T=(BiTree)malloc(sizeof(BiTNode));
      if(!*T)
        exit(OVERFLOW);
-     (*T)->data=ch; /* Éú³É¸ù½áµã */
-     CreateBiTree(&(*T)->lchild); /* ¹¹Ôì×ó×ÓÊ÷ */
-     CreateBiTree(&(*T)->rchild); /* ¹¹ÔìÓÒ×ÓÊ÷ */
+     (*T)->data=ch; /* ï¿½ï¿½ï¿½É¸ï¿½ï¿½ï¿½ï¿½ */
+     CreateBiTree(&(*T)->lchild); /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+     CreateBiTree(&(*T)->rchild); /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
    }
  }
 
  Status BiTreeEmpty(BiTree T)
- { /* ³õÊ¼Ìõ¼þ: ¶þ²æÊ÷T´æÔÚ */
-   /* ²Ù×÷½á¹û: ÈôTÎª¿Õ¶þ²æÊ÷,Ôò·µ»ØTRUE,·ñÔòFALSE */
+ { /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½ï¿½ */
+   /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½TÎªï¿½Õ¶ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ò·µ»ï¿½TRUE,ï¿½ï¿½ï¿½ï¿½FALSE */
    if(T)
      return FALSE;
    else
@@ -55,7 +55,7 @@
  }
 
  int BiTreeDepth(BiTree T)
- { /* ³õÊ¼Ìõ¼þ: ¶þ²æÊ÷T´æÔÚ¡£²Ù×÷½á¹û: ·µ»ØTµÄÉî¶È */
+ { /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½ï¿½ï¿½ */
    int i,j;
    if(!T)
      return 0;
@@ -71,7 +71,7 @@
  }
 
  TElemType Root(BiTree T)
- { /* ³õÊ¼Ìõ¼þ: ¶þ²æÊ÷T´æÔÚ¡£²Ù×÷½á¹û: ·µ»ØTµÄ¸ù */
+ { /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½Tï¿½Ä¸ï¿½ */
    if(BiTreeEmpty(T))
      return Nil;
    else
@@ -83,34 +83,34 @@
    BiTree T;
    TElemType e1;
    InitBiTree(&T);
-   printf("¹¹Ôì¿Õ¶þ²æÊ÷ºó,Ê÷¿Õ·ñ£¿%d(1:ÊÇ 0:·ñ) Ê÷µÄÉî¶È=%d\n",BiTreeEmpty(T),BiTreeDepth(T));
+   printf("ï¿½ï¿½ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Õ·ï¿½%d(1:ï¿½ï¿½ 0:ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=%d\n",BiTreeEmpty(T),BiTreeDepth(T));
    e1=Root(T);
    if(e1!=Nil)
  #ifdef CHAR
-     printf("¶þ²æÊ÷µÄ¸ùÎª: %c\n",e1);
+     printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Îª: %c\n",e1);
  #endif
  #ifdef INT
-     printf("¶þ²æÊ÷µÄ¸ùÎª: %d\n",e1);
+     printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Îª: %d\n",e1);
  #endif
    else
-     printf("Ê÷¿Õ£¬ÎÞ¸ù\n");
+     printf("ï¿½ï¿½ï¿½Õ£ï¿½ï¿½Þ¸ï¿½\n");
  #ifdef CHAR
-   printf("ÇëÏÈÐòÊäÈë¶þ²æÊ÷(Èç:abÈý¸ö¿Õ¸ñ±íÊ¾aÎª¸ù½áµã,bÎª×ó×ÓÊ÷µÄ¶þ²æÊ÷)\n");
+   printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½:abï¿½ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½ï¿½Ê¾aÎªï¿½ï¿½ï¿½ï¿½ï¿½,bÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½)\n");
  #endif
  #ifdef INT
-   printf("ÇëÏÈÐòÊäÈë¶þ²æÊ÷(Èç:1 2 0 0 0±íÊ¾1Îª¸ù½áµã,2Îª×ó×ÓÊ÷µÄ¶þ²æÊ÷)\n");
+   printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½:1 2 0 0 0ï¿½ï¿½Ê¾1Îªï¿½ï¿½ï¿½ï¿½ï¿½,2Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½)\n");
  #endif
    CreateBiTree(&T);
-   printf("½¨Á¢¶þ²æÊ÷ºó,Ê÷¿Õ·ñ£¿%d(1:ÊÇ 0:·ñ) Ê÷µÄÉî¶È=%d\n",BiTreeEmpty(T),BiTreeDepth(T));
+   printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Õ·ï¿½%d(1:ï¿½ï¿½ 0:ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=%d\n",BiTreeEmpty(T),BiTreeDepth(T));
    e1=Root(T);
    if(e1!=Nil)
  #ifdef CHAR
-     printf("¶þ²æÊ÷µÄ¸ùÎª: %c\n",e1);
+     printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Îª: %c\n",e1);
  #endif
  #ifdef INT
-     printf("¶þ²æÊ÷µÄ¸ùÎª: %d\n",e1);
+     printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Îª: %d\n",e1);
  #endif
    else
-     printf("Ê÷¿Õ£¬ÎÞ¸ù\n");
+     printf("ï¿½ï¿½ï¿½Õ£ï¿½ï¿½Þ¸ï¿½\n");
  }
 
